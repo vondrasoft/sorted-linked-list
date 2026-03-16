@@ -1,0 +1,43 @@
+{
+    "name": "vondrasoft/sorted-linked-list",
+    "version": "1.0.0",
+    "description": "A homogeneous, type-safe sorted singly linked list for PHP 8.4+",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.4"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpunit/phpunit": "^11.0",
+        "shipmonk/coding-standard": "^0.1.3",
+        "shipmonk/phpstan-rules": "^4.3",
+        "slevomat/coding-standard": "^8.0",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vondrasoft\\DataStructures\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vondrasoft\\DataStructures\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "XDEBUG_MODE=coverage phpunit --coverage-text --coverage-html=coverage",
+        "analyze": "phpstan analyse --configuration=phpstan.neon",
+        "cs": "phpcs --standard=phpcs.xml",
+        "cs-fix": "phpcbf --standard=phpcs.xml",
+        "benchmark": "php benchmarks/benchmark.php"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

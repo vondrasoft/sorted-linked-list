@@ -1,0 +1,7 @@
+services:
+  php:
+    image: ghcr.io/vondrasoft/php-xdebug:8.4
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ["sleep", "infinity"]
